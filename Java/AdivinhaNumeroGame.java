@@ -7,10 +7,11 @@ class AdivinhaNumeroGame {
     public static void main(String[] args) {
         System.out.println("Bem vindo ao jogo da adivinhação");
         Random random = new Random();
+        Scanner sc = new Scanner(System.in);
+
         int numeroSorteio = random.nextInt(100);
         int chute = 0;
         int tentativas = 0;
-        Scanner sc = new Scanner(System.in);
 
         while (chute != numeroSorteio) {
             System.out.println("Qual o número você acha que o computador pensou? [0-100] ");

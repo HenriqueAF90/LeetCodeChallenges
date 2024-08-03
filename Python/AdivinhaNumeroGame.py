@@ -1,10 +1,21 @@
+import random
+
 class AdivinhaNumeroGame:
-    numeroSorterio = 1
+    numeroSorteado = random.randint(1,100)
     print('"Bem vindo ao jogo da adivinhação')
-    chute = int(input('Qual o número você acha que o computador pensou? '))
+    chute = 0
+    tentativas = 0
+
+    while chute != numeroSorteado:
+        chute = int(input('Qual o número você acha que o computador pensou? '))
+        tentativas += 1
+        if chute > numeroSorteado:
+            print('O número é menor')
+        elif chute < numeroSorteado:
+            print('O número é maior')
     
-    if chute == numeroSorterio:
-        print('Número correto')
-    else:
-        print('Infelizmente você errou')
+    palavraTentativas = ' tentativa' if tentativas == 1 else ' tentativas'
+    print(f'Parabéns você acertou com {tentativas} {palavraTentativas}')
+
+    
 
